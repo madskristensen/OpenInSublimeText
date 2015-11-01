@@ -4,6 +4,7 @@
         <Identity Id="2925bbf7-d48b-4abd-83dc-1cd711d9b9ba" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
         <DisplayName>Open in Sublime Text</DisplayName>
         <Description xml:space="preserve">Adds a menu command that lets you open any solution, project, folder and file in Sublime Text.</Description>
+        <MoreInfo>https://github.com/madskristensen/OpenInSublimeText/</MoreInfo>
         <License>Resources\LICENSE</License>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Preview.png</PreviewImage>
