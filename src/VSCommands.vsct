@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <Extern href="stdidcmd.h"/>
+    <Extern href="vsshlids.h"/>
+
+    <Commands package="guidPackage">
+        <Buttons>
+            <Button guid="guidOpenInVsCmdSet" id="OpenInSublimeText" priority="0x0500" type="Button">
+                <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_FOLDER_EXPLORE" />
+                <Icon guid="guidIcons" id="Sublime" />
+                <Strings>
+                    <ButtonText>Open in Sublime Text</ButtonText>
+                </Strings>
+            </Button>
+        </Buttons>
+
+        <Bitmaps>
+            <Bitmap guid="guidIcons" usedList="Sublime" href="Resources/logo.png" />
+        </Bitmaps>
+    </Commands>
+
+    <CommandPlacements>
+        <CommandPlacement guid="guidOpenInVsCmdSet" id="OpenInSublimeText" priority="0x0500">
+            <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_SOLUTION_EXPLORE"/>
+        </CommandPlacement>
+        <CommandPlacement guid="guidOpenInVsCmdSet" id="OpenInSublimeText" priority="0x0500">
+            <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_EXPLORE"/>
+        </CommandPlacement>
+        <CommandPlacement guid="guidOpenInVsCmdSet" id="OpenInSublimeText" priority="0x0500">
+            <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_ITEM_OPEN"/>
+        </CommandPlacement>
+    </CommandPlacements>
+
+    <Symbols>
+        <!-- This is the package guid. -->
+        <GuidSymbol name="guidPackage" value="{f5b36ea2-9430-4d77-83dc-c7f6a39e6083}" />
+
+        <GuidSymbol name="guidOpenInVsCmdSet" value="{bcea1810-8ea5-45b9-9df0-7ea5baf757cd}">
+            <IDSymbol name="OpenInSublimeText" value="0x0100" />
+        </GuidSymbol>
+
+        <GuidSymbol name="guidIcons" value="{bcea1810-8ea5-45b9-9df0-7ea5baf757ce}">
+            <IDSymbol name="Sublime" value="1" />
+        </GuidSymbol>
+    </Symbols>
+</CommandTable>
