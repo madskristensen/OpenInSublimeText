@@ -6,7 +6,7 @@ Sublime Text.
 [![Build status](https://ci.appveyor.com/api/projects/status/k8f8ny0jxq2h53wr?svg=true)](https://ci.appveyor.com/project/madskristensen/openinsublimetext)
 
 Download the extension at the
-[VS Gallery](https://visualstudiogallery.msdn.microsoft.com/33f6f3fd-68e8-4783-b934-ece91a08d265)
+[VS Gallery](https://visualstudiogallery.msdn.microsoft.com/384892a5-7b67-42f2-b7de-574ef254a02a)
 or get the
 [nightly build](http://vsixgallery.com/extension/2925bbf7-d48b-4abd-83dc-1cd711d9b9ba/)
 
