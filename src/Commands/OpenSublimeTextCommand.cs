@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.ComponentModel.Design;
 using System.IO;
+using System.Linq;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
@@ -83,16 +83,17 @@ namespace OpenInSublimeText
 
         private static string FindSublimeText()
         {
-            string programFiles = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles).Replace(" (x86)", string.Empty);
-            var dirs = Directory.EnumerateDirectories(programFiles, "Sublime Text*").Reverse();
+            var programFiles = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
+            var dirs = programFiles.Parent.GetDirectories(programFiles.Name.Replace(" (x86)", string.Empty) + "*");
 
-            foreach (string dir in dirs)
-            {
-                string path = Path.Combine(dir, "subl.exe");
+            foreach (DirectoryInfo parent in dirs)
+                foreach (DirectoryInfo dir in parent.GetDirectories("Sublime*").Reverse())
+                {
+                    string path = Path.Combine(dir.FullName, "subl.exe");
 
-                if (File.Exists(path))
-                    return path;
-            }
+                    if (File.Exists(path))
+                        return path;
+                }
 
             return null;
         }
