@@ -75,7 +75,10 @@ namespace OpenInSublimeText
             };
 
             using (System.Diagnostics.Process.Start(start))
-                Telemetry.TrackEvent("Open in Sublime Text");
+            {
+                string evt = isDirectory ? "directory" : "file";
+                Telemetry.TrackEvent($"Open {evt}");
+            }
         }
 
         private static string FindSublimeText()
