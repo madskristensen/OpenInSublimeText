@@ -3,7 +3,7 @@ A Visual Studio extension that adds a menu command that
 lets you open any solution, project, folder or file in
 Sublime Text.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/hdd4uqjdqpq0f6lf?svg=true)](https://ci.appveyor.com/project/madskristensen/openinvscode)
+[![Build status](https://ci.appveyor.com/api/projects/status/k8f8ny0jxq2h53wr?svg=true)](https://ci.appveyor.com/project/madskristensen/openinsublimetext)
 
 Download the extension at the
 [VS Gallery](https://visualstudiogallery.msdn.microsoft.com/33f6f3fd-68e8-4783-b934-ece91a08d265)
