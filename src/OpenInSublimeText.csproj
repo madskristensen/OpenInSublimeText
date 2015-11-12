@@ -64,6 +64,9 @@
     <Compile Include="Helpers\Telemetry.cs" />
     <Compile Include="Commands\OpenSublimeTextCommand.cs" />
     <Compile Include="Helpers\ProjectHelpers.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VSCommands.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

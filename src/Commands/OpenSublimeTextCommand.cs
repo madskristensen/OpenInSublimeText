@@ -44,7 +44,7 @@ namespace OpenInSublimeText
             try
             {
                 string path = ProjectHelpers.GetSelectedPath(dte);
-                string exe = FindSublimeText();
+                string exe = VSPackage.Settings.FolderPath;
 
                 if (!string.IsNullOrEmpty(path) && !string.IsNullOrEmpty(exe))
                 {
@@ -81,21 +81,21 @@ namespace OpenInSublimeText
             }
         }
 
-        private static string FindSublimeText()
-        {
-            var programFiles = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
-            var dirs = programFiles.Parent.GetDirectories(programFiles.Name.Replace(" (x86)", string.Empty) + "*");
+        //private static string FindSublimeText()
+        //{
+        //    var programFiles = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
+        //    var dirs = programFiles.Parent.GetDirectories(programFiles.Name.Replace(" (x86)", string.Empty) + "*");
 
-            foreach (DirectoryInfo parent in dirs)
-                foreach (DirectoryInfo dir in parent.GetDirectories("Sublime*").Reverse())
-                {
-                    string path = Path.Combine(dir.FullName, "subl.exe");
+        //    foreach (DirectoryInfo parent in dirs)
+        //        foreach (DirectoryInfo dir in parent.GetDirectories("Sublime*").Reverse())
+        //        {
+        //            string path = Path.Combine(dir.FullName, "subl.exe");
 
-                    if (File.Exists(path))
-                        return path;
-                }
+        //            if (File.Exists(path))
+        //                return path;
+        //        }
 
-            return null;
-        }
+        //    return null;
+        //}
     }
 }

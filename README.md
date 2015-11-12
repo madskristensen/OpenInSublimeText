@@ -32,6 +32,14 @@ Explorer and select
 
 ![Context menu](art/context-menu.png)
 
+### Settings
+The extension will automatically find **sublime_text.exe**
+when it's located at Sublime Text's default install
+directory. If it's installed at a custom location, you
+can easily change it in the settings:
+
+![Settings](art/settings.png)
+
 ### Change Sublime's settings
 Sublime Text will by default remember which folders and
 files was open last time it was closed. That makes opening
