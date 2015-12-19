@@ -1,4 +1,4 @@
-## Open in Sublime Text
+# Open in Sublime Text
 A Visual Studio extension that adds a menu command that
 lets you open any solution, project, folder or file in
 Sublime Text.
@@ -16,7 +16,7 @@ This extension is for those times where you have a project
 open in Visual Studio and you want to be able to quickly
 open it in Sublime Text.
 
-### Prerequisite
+## Prerequisite
 In order to use this extension, you must have Visual
 Studio 2015 as well as Sublime Text installed.
 
@@ -24,7 +24,7 @@ You can
 [download Sublime Text](http://www.sublimetext.com/)
 for free.
 
-### Solution Explorer
+## Solution Explorer
 You can open any solution, project, folder or file in
 Sublime Text by simply right-clicking it in Solution
 Explorer and select
@@ -55,3 +55,6 @@ To turn off this behavior in Sublime Text, go to
 "hot_exit": false,
 "remember_open_files": false
 ```
+
+## License
+[Apache 2.0](LICENSE)
