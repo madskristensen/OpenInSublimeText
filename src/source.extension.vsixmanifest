@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="2925bbf7-d48b-4abd-83dc-1cd711d9b9ba" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
+        <Identity Id="2925bbf7-d48b-4abd-83dc-1cd711d9b9ba" Version="1.1" Language="en-US" Publisher="Mads Kristensen" />
         <DisplayName>Open in Sublime Text</DisplayName>
         <Description xml:space="preserve">Adds a menu command that lets you open any solution, project, folder and file in Sublime Text.</Description>
         <MoreInfo>https://github.com/madskristensen/OpenInSublimeText/</MoreInfo>
@@ -11,7 +11,8 @@
         <Tags>sublime, text, code</Tags>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="14.0" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="15.0" />
     </Installation>
     <Dependencies>
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
