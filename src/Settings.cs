@@ -13,6 +13,11 @@ namespace OpenInSublimeText
         [Description("The absolute path to the \"sublime_text.exe\" or \"subl.exe\" file.")]
         public string FolderPath { get; set; }
 
+        [Category("General")]
+        [DisplayName("Open solution/project as regular file")]
+        [Description("When true, opens solutions/projects as regular files and does not load folder path into Sublime.")]
+        public bool OpenSolutionProjectAsRegularFile { get; set; }
+
         public override void LoadSettingsFromStorage()
         {
             base.LoadSettingsFromStorage();

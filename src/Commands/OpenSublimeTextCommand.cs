@@ -43,7 +43,7 @@ namespace OpenInSublimeText
 
             try
             {
-                string path = ProjectHelpers.GetSelectedPath(dte);
+                string path = ProjectHelpers.GetSelectedPath(dte, VSPackage.Settings.OpenSolutionProjectAsRegularFile);
                 string exe = VSPackage.Settings.FolderPath;
 
                 if (!string.IsNullOrEmpty(path) && !string.IsNullOrEmpty(exe))
