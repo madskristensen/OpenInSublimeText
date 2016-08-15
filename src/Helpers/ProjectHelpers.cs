@@ -7,7 +7,7 @@ namespace OpenInSublimeText
 {
     internal static class ProjectHelpers
     {
-        public static string GetSelectedPath(DTE2 dte)
+        public static string GetSelectedPath(DTE2 dte, bool openSolutionProjectAsRegularFile)
         {
             var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
 
@@ -21,12 +21,12 @@ namespace OpenInSublimeText
                 Project proj = selItem.Object as Project;
 
                 if (proj != null)
-                    return proj.GetRootFolder();
+                    return openSolutionProjectAsRegularFile ? proj.FullName : proj.GetRootFolder();
 
                 Solution sol = selItem.Object as Solution;
 
                 if (sol != null)
-                    return Path.GetDirectoryName(sol.FileName);
+                    return openSolutionProjectAsRegularFile ? sol.FullName : Path.GetDirectoryName(sol.FileName);
             }
 
             return null;
