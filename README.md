@@ -32,13 +32,22 @@ Explorer and select
 
 ![Context menu](art/context-menu.png)
 
-### Settings
+## Settings
+
+### Install Path
 The extension will automatically find **sublime_text.exe**
 when it's located at Sublime Text's default install
 directory. If it's installed at a custom location, you
 can easily change it in the settings:
 
-![Settings](art/settings.png)
+![Install Path](art/settings/install-path.png)
+
+### Opening Solution and Project files as regular files
+This will allow you the option of opening your solution
+and project files as regular files. By default, the 
+extension will load the solution and project folders into Sublime.
+
+![Open Solution and Project files as regular files](art/settings/open-solution-project-as-regular-files.png)
 
 ### Change Sublime's settings
 Sublime Text will by default remember which folders and
