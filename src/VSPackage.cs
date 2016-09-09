@@ -18,10 +18,7 @@ namespace OpenInSublimeText
             Settings = (Settings)GetDialogPage(typeof(Settings));
 
             Logger.Initialize(this, Vsix.Name);
-            Telemetry.Initialize(this, Vsix.Version, "7f5bc7fb-da06-481e-b66d-40088746d163");
             OpenSublimeTextCommand.Initialize(this);
-
-            base.Initialize();
         }
     }
 }
