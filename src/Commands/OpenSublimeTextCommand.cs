@@ -18,9 +18,13 @@ namespace OpenInSublimeText
             OleMenuCommandService commandService = ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (commandService != null)
             {
-                var menuCommandID = new CommandID(PackageGuids.guidOpenInVsCmdSet, PackageIds.OpenInSublimeText);
-                var menuItem = new MenuCommand(OpenPath, menuCommandID);
-                commandService.AddCommand(menuItem);
+                var openFileMenuCommandID = new CommandID(PackageGuids.guidOpenInVsCmdSet, PackageIds.OpenInSublimeText);
+                var openFileMenuItem = new MenuCommand(OpenPath, openFileMenuCommandID);
+                commandService.AddCommand(openFileMenuItem);
+
+                var openCurrentFileMenuCommandID = new CommandID(PackageGuids.guidOpenInVsCmdSet, PackageIds.OpenCurrentFileInSublimeText);
+                var openCurrentFileMenuItem = new MenuCommand(OpenCurrentFile, openCurrentFileMenuCommandID);
+                commandService.AddCommand(openCurrentFileMenuItem);
             }
         }
 
@@ -60,7 +64,39 @@ namespace OpenInSublimeText
             }
         }
 
-        private static void OpenSublimeText(string exe, string path)
+        private void OpenCurrentFile(object sender, EventArgs e)
+        {
+            var dte = (DTE2)ServiceProvider.GetService(typeof(DTE));
+
+            try
+            {
+                string path = dte.ActiveDocument.FullName;
+                int line = 0;
+
+                TextSelection selection = dte.ActiveDocument.Selection as TextSelection;
+                if (selection != null)
+                {
+                    line = selection.ActivePoint.Line;
+                }
+
+                string exe = VSPackage.Settings.FolderPath;
+
+                if (!string.IsNullOrEmpty(path) && !string.IsNullOrEmpty(exe))
+                {
+                    OpenSublimeText(exe, path, line);
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Couldn't resolve the folder");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex);
+            }
+        }
+
+        private static void OpenSublimeText(string exe, string path, int line = 0)
         {
             bool isDirectory = Directory.Exists(path);
 
@@ -68,7 +104,7 @@ namespace OpenInSublimeText
             {
                 WorkingDirectory = path,
                 FileName = $"\"{exe}\"",
-                Arguments = isDirectory ? "." : $"\"{path}\"",
+                Arguments = isDirectory ? "." : $"\"{path}\":{line}",
                 CreateNoWindow = true,
                 WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
             };
