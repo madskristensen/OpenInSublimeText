@@ -13,7 +13,21 @@
                     <ButtonText>Open in Sublime Text</ButtonText>
                 </Strings>
             </Button>
+
+            <Button guid="guidOpenInVsCmdSet" id="OpenCurrentFileInSublimeText" priority="0x0500" type="Button">
+                <Parent guid="guidOpenInVsCmdSet" id="FileOpenMenuGroup" />
+                <Icon guid="guidIcons" id="Sublime" />
+                <Strings>
+                    <ButtonText>Current File in Sublime Text</ButtonText>
+                </Strings>
+            </Button>
         </Buttons>
+
+        <Groups>
+            <Group guid="guidOpenInVsCmdSet" id="FileOpenMenuGroup">
+                <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_OPEN" />
+            </Group>
+        </Groups>
 
         <Bitmaps>
             <Bitmap guid="guidIcons" usedList="Sublime" href="Resources/logo.png" />
@@ -38,6 +52,8 @@
 
         <GuidSymbol name="guidOpenInVsCmdSet" value="{bcea1810-8ea5-45b9-9df0-7ea5baf757cd}">
             <IDSymbol name="OpenInSublimeText" value="0x0100" />
+            <IDSymbol name="FileOpenMenuGroup" value="0x0101" />
+            <IDSymbol name="OpenCurrentFileInSublimeText" value="0x0102" />
         </GuidSymbol>
 
         <GuidSymbol name="guidIcons" value="{bcea1810-8ea5-45b9-9df0-7ea5baf757ce}">

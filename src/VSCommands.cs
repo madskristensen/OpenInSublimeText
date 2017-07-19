@@ -20,6 +20,8 @@ namespace OpenInSublimeText
     internal sealed partial class PackageIds
     {
         public const int OpenInSublimeText = 0x0100;
+        public const int FileOpenMenuGroup = 0x0101;
+        public const int OpenCurrentFileInSublimeText = 0x0102;
         public const int Sublime = 0x0001;
     }
 }
