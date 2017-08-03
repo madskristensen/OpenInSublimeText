@@ -70,7 +70,7 @@ namespace OpenInSublimeText
 
             try
             {
-                string path = dte.ActiveDocument.FullName;
+                string path = $"\"{dte.ActiveDocument.FullName}\"";
                 int line = 0;
 
                 TextSelection selection = dte.ActiveDocument.Selection as TextSelection;
@@ -104,7 +104,7 @@ namespace OpenInSublimeText
             {
                 WorkingDirectory = path,
                 FileName = $"\"{exe}\"",
-                Arguments = isDirectory ? "." : $"\"{path}\":{line}",
+                Arguments = isDirectory ? "." : $"{path}:{line}",
                 CreateNoWindow = true,
                 WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
             };

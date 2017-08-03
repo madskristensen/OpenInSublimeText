@@ -2,6 +2,7 @@
 using System.IO;
 using EnvDTE;
 using EnvDTE80;
+using System.Collections.Generic;
 
 namespace OpenInSublimeText
 {
@@ -10,13 +11,14 @@ namespace OpenInSublimeText
         public static string GetSelectedPath(DTE2 dte, bool openSolutionProjectAsRegularFile)
         {
             var items = (Array)dte.ToolWindows.SolutionExplorer.SelectedItems;
+            var files = new List<string>();
 
             foreach (UIHierarchyItem selItem in items)
             {
                 ProjectItem item = selItem.Object as ProjectItem;
 
                 if (item != null)
-                    return item.Properties.Item("FullPath").Value.ToString();
+                    files.Add($"\"{ item.Properties.Item("FullPath").Value.ToString()}\"");
 
                 Project proj = selItem.Object as Project;
 
@@ -29,7 +31,7 @@ namespace OpenInSublimeText
                     return openSolutionProjectAsRegularFile ? sol.FullName : Path.GetDirectoryName(sol.FileName);
             }
 
-            return null;
+            return files.Count > 0 ? String.Join(" ", files) : null;
         }
 
         public static string GetRootFolder(this Project project)
