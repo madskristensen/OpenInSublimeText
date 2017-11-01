@@ -24,7 +24,7 @@
         </Buttons>
 
         <Groups>
-            <Group guid="guidOpenInVsCmdSet" id="FileOpenMenuGroup">
+            <Group guid="guidOpenInVsCmdSet" id="FileOpenMenuGroup" priority="0x0500">
                 <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_OPEN" />
             </Group>
         </Groups>
