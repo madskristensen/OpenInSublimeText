@@ -5,11 +5,11 @@ using Microsoft.VisualStudio.Shell.Interop;
 public static class Logger
 {
     private static IVsOutputWindowPane pane;
-    private static object _syncRoot = new object();
+    private static readonly object _syncRoot = new object();
     private static IServiceProvider _provider;
     private static string _name;
 
-    public static void Initialize(IServiceProvider provider, string name)
+    public static void Initialize(Microsoft.VisualStudio.Shell.Package provider, string name)
     {
         _provider = provider;
         _name = name;
